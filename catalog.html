@@ -4,15 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Catalog | Kali Group</title>
+  <meta name="description" content="Entrance and interior doors from Kali Group: search, filter, compare prices and add doors to your order.">
+  <meta name="theme-color" content="#2b2b2b">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
   <header class="sticky-top">
-    <nav class="navbar navbar-expand-md site-nav">
+    <nav class="navbar navbar-expand-md site-nav" aria-label="Main menu">
       <div class="container">
         <a class="navbar-brand" href="index.html">Kali <span>Group</span></a>
 
@@ -24,8 +31,9 @@
         <div class="collapse navbar-collapse" id="mainMenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link active" href="catalog.html">Catalog</a></li>
-            <li class="nav-item"><a class="nav-link" href="#order">Order</a></li>
+            <li class="nav-item"><a class="nav-link active" href="catalog.html" aria-current="page">Catalog</a></li>
+            <li class="nav-item"><a class="nav-link" href="design.html">Design</a></li>
+            <li class="nav-item"><a class="nav-link" href="order.html">Order <span class="cart-count d-none" aria-label="doors in your order">0</span></a></li>
           </ul>
         </div>
       </div>
@@ -37,69 +45,60 @@
     <section class="page-head">
       <p class="kicker">Catalog</p>
       <h1>Choose your door</h1>
-      <p class="mb-0">Two models, two sides each: one for the street and one for your home.</p>
+      <p class="mb-0">Two models, two sides each. Search, filter and add the doors you like to your order.</p>
     </section>
 
     <section class="section" id="doors">
       <div class="container">
         <h2 class="section-title">Our doors</h2>
-        <p class="section-text">Move the mouse over a card to look closer.</p>
+        <p class="section-text">Every model comes in two sizes.</p>
 
-        <div class="row g-4">
-
-          <div class="col-12 col-md-6 col-lg-3">
-            <article class="card door-card h-100">
-              <img src="images/door-classic-outside.jpg" class="card-img-top" alt="Classic door, graphite street side">
-              <div class="card-body d-flex flex-column">
-                <p class="kicker mb-1">Street side</p>
-                <h3 class="h5">Classic Graphite</h3>
-                <p>Dark metal with a simple shape. Strong and easy to clean.</p>
-                <p class="door-price mt-auto">from 90 941 ₸</p>
-                <a href="#order" class="button button-dark text-center">Order</a>
-              </div>
-            </article>
+        <div class="filters mb-3" role="search" aria-label="Find a door">
+          <div class="row g-3 align-items-end">
+            <div class="col-12 col-lg-4">
+              <label for="search" class="form-label">Search</label>
+              <input type="search" id="search" class="form-control" placeholder="Classic, walnut, 860..." maxlength="40" autocomplete="off">
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+              <label for="modelFilter" class="form-label">Model</label>
+              <select id="modelFilter" class="form-select">
+                <option value="all">All models</option>
+                <option value="Classic">Classic</option>
+                <option value="Modern">Modern</option>
+              </select>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+              <label for="sizeFilter" class="form-label">Width</label>
+              <select id="sizeFilter" class="form-select">
+                <option value="all">Any width</option>
+                <option value="860">860 mm</option>
+                <option value="960">960 mm</option>
+              </select>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+              <label for="sortBy" class="form-label">Sort by</label>
+              <select id="sortBy" class="form-select">
+                <option value="low">Price: low to high</option>
+                <option value="high">Price: high to low</option>
+                <option value="name">Name A–Z</option>
+              </select>
+            </div>
+            <div class="col-6 col-md-3 col-lg-2">
+              <button type="button" class="button button-line w-100" id="resetFilters">Clear filters</button>
+            </div>
           </div>
-
-          <div class="col-12 col-md-6 col-lg-3">
-            <article class="card door-card h-100">
-              <img src="images/door-classic-inside.jpg" class="card-img-top" alt="Classic door, white home side with panels">
-              <div class="card-body d-flex flex-column">
-                <p class="kicker mb-1">Home side</p>
-                <h3 class="h5">Classic White</h3>
-                <p>White panels in a classic style for a light hallway.</p>
-                <p class="door-price mt-auto">from 92 885₸</p>
-                <a href="#order" class="button button-dark text-center">Order</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3">
-            <article class="card door-card h-100">
-              <img src="images/door-modern-outside.jpg" class="card-img-top" alt="Modern door, walnut street side with lines">
-              <div class="card-body d-flex flex-column">
-                <p class="kicker mb-1">Street side</p>
-                <h3 class="h5">Modern Walnut</h3>
-                <p>Wood colour with thin lines. The door people remember.</p>
-                <p class="door-price mt-auto">from 140 000 ₸</p>
-                <a href="#order" class="button button-dark text-center">Order</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-12 col-md-6 col-lg-3">
-            <article class="card door-card h-100">
-              <img src="images/door-modern-inside.jpg" class="card-img-top" alt="Modern door, white home side with lines">
-              <div class="card-body d-flex flex-column">
-                <p class="kicker mb-1">Home side</p>
-                <h3 class="h5">Modern White</h3>
-                <p>Smooth white with the same lines for a new apartment.</p>
-                <p class="door-price mt-auto">from 140 000 ₸</p>
-                <a href="#order" class="button button-dark text-center">Order</a>
-              </div>
-            </article>
-          </div>
-
         </div>
+
+        <p class="result-info" id="resultInfo" aria-live="polite"></p>
+
+        <div class="row g-4" id="doorGrid"></div>
+
+        <div class="empty-state d-none" id="emptyState">
+          <h3 class="h5">No doors found</h3>
+          <p>Try another word or clear the filters.</p>
+          <button type="button" class="button button-dark" id="emptyReset">Clear filters</button>
+        </div>
+        <noscript><p>Please turn on JavaScript to see the doors.</p></noscript>
       </div>
     </section>
 
@@ -166,103 +165,42 @@
       </div>
     </section>
 
-    <section class="section pt-0 faq" id="faq">
+    <section class="section pt-0" id="faq">
       <div class="container">
         <h2 class="section-title">Questions and answers</h2>
         <p class="section-text">What customers ask us most often.</p>
 
         <div class="row justify-content-center">
           <div class="col-12 col-lg-8">
-            <div class="accordion" id="faqList">
 
-              <div class="accordion-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                    How long does installation take?
-                  </button>
-                </h3>
-                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqList">
-                  <div class="accordion-body">Usually one day. Custom orders can take longer.</div>
-                </div>
-              </div>
-
-              <div class="accordion-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                    Is the measurement free?
-                  </button>
-                </h3>
-                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqList">
-                  <div class="accordion-body">Yes, the measurement is free when you order a door from us.</div>
-                </div>
-              </div>
-
-              <div class="accordion-item">
-                <h3 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                    Can I order a door in my own size?
-                  </button>
-                </h3>
-                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqList">
-                  <div class="accordion-body">Yes, we make doors in any size and colour.</div>
-                </div>
-              </div>
-
+            <div class="faq-item">
+              <h3><button type="button" class="faq-question" id="faqQ1" aria-expanded="true" aria-controls="faqA1">How long does installation take?</button></h3>
+              <div class="faq-answer" id="faqA1" role="region" aria-labelledby="faqQ1" style="display: block;">Usually one day. Custom orders can take longer.</div>
             </div>
+
+            <div class="faq-item">
+              <h3><button type="button" class="faq-question" id="faqQ2" aria-expanded="false" aria-controls="faqA2">Is the measurement free?</button></h3>
+              <div class="faq-answer" id="faqA2" role="region" aria-labelledby="faqQ2">Yes, the measurement is free when you order a door from us.</div>
+            </div>
+
+            <div class="faq-item">
+              <h3><button type="button" class="faq-question" id="faqQ3" aria-expanded="false" aria-controls="faqA3">Can I order a door in my own size?</button></h3>
+              <div class="faq-answer" id="faqA3" role="region" aria-labelledby="faqQ3">Yes, we make doors in any size and colour.</div>
+            </div>
+
+            <div class="faq-item">
+              <h3><button type="button" class="faq-question" id="faqQ4" aria-expanded="false" aria-controls="faqA4">Can the two sides have different colours?</button></h3>
+              <div class="faq-answer" id="faqA4" role="region" aria-labelledby="faqQ4">Yes. Open the <a href="design.html">Design page</a> and try the colours of both sides before you order.</div>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section pt-0" id="order">
-      <div class="container">
-        <h2 class="section-title">Order a free measurement</h2>
-        <p class="section-text">Leave your phone number and we will call you back.</p>
-
-        <div class="row g-4">
-
-          <div class="col-12 col-md-7">
-            <form class="order-form">
-              <div class="mb-3">
-                <label for="name" class="form-label">Your name</label>
-                <input type="text" id="name" name="name" class="form-control" required>
-              </div>
-              <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+7 ___ ___ __ __" required>
-              </div>
-              <div class="mb-3">
-                <label for="model" class="form-label">Door model</label>
-                <select id="model" name="model" class="form-select">
-                  <option>Classic</option>
-                  <option>Modern</option>
-                  <option>Custom size</option>
-                  <option>I need advice</option>
-                </select>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Comment</label>
-                <textarea id="message" name="message" class="form-control" rows="3"></textarea>
-              </div>
-              <div class="form-check mb-3">
-                <input type="checkbox" id="install" name="install" class="form-check-input" checked>
-                <label for="install" class="form-check-label">I also need installation</label>
-              </div>
-              <button type="submit" class="button">Send request</button>
-            </form>
-          </div>
-
-          <div class="col-12 col-md-5">
-            <aside class="order-info">
-              <h3>Or contact us</h3>
-              <p>Phone: <a href="tel:+77021027418">+7 702 102 74 18</a></p>
-              <p>Email: <a href="mailto:kaligroup@gmail.com">kaligroup@gmail.com</a></p>
-              <p class="mb-0">Mon–Sat, 9:00–21:00</p>
-            </aside>
-          </div>
-
-        </div>
-      </div>
+    <section class="cta">
+      <h2>Found your door?</h2>
+      <a href="order.html" class="button">Go to your order</a>
     </section>
 
   </main>
@@ -281,13 +219,21 @@
         </div>
         <div>
           <h3>Working hours</h3>
-          <p>Mon–Sat, 9:00–21:00</p>
+          <p>Tue–Sun, 10:00–22:00</p>
         </div>
       </div>
-      <p class="footer-credit">&copy; 2026 Kali Group. Photos: Kali Group. Fonts: Playfair Display and Inter from Google Fonts.</p>
+      <p class="footer-credit">&copy; 2026 Kali Group. Photos: Kali Group. Fonts: Playfair Display and Inter (Google Fonts). Built with Bootstrap 5.3.3 and jQuery 3.7.1. Code and site icon made with the help of Claude (AI by Anthropic).</p>
     </div>
   </footer>
 
+  <button type="button" class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  <div class="toast-note" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/shared.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/catalog.js"></script>
 </body>
 </html>
